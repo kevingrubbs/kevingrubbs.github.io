@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+
+    	let bar1Url = "https://docs.google.com/spreadsheets/u/2/d/e/2PACX-1vSxf1QZFjy54gjPAm1k5WL4NRa9uCJ_U8_yum_n0m0e88ysKo2tgWjqKVVn4BVvy8Sd8q-nvPqr9KEe/pubchart?oid=1408096224&format=image"
+    	let line2Url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSxf1QZFjy54gjPAm1k5WL4NRa9uCJ_U8_yum_n0m0e88ysKo2tgWjqKVVn4BVvy8Sd8q-nvPqr9KEe/pubchart?oid=1383794762&format=image"
+
+	    $( document ).ready(function() {
+	        refresh();
+	        setInterval(refresh, 5000);
+	    });
+	 
+	    function refresh() {
+	    	let random = "&random="+new Date().getTime();
+	    	$("#bar1").attr("src", `${bar1Url}${random}`);
+	    	$("#line2").attr("src", `${line2Url}${random}`);
+	    }
+    </script>
+</head>
+<body>
+
+<h1>Kickoff Dashboard</h1>
+<h2>Cedar Ridge Boost Blitz - August 16, 2021</h2> 
+
+<img id="bar1" style="max-width:100%;height:auto;">
+
+<img id="line2" style="max-width:100%;height:auto;">
+</body>
+</html>
