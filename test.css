@@ -1,0 +1,215 @@
+/* INSTRUCTION and example for customize VOLLEYBALL and TABLETENNIS scoreboard:
+Each element has one or more classes, so you can control one or more elements at the same time.
+On the left you can read every single element with his class */
+
+/*--- First step - FONTS: CSS involves embedding fonts at the beginning of the document. You can import and use webfont, for example here we imported a Google font (https://fonts.google.com/) ---*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+
+:root {
+  --hometeam-color: #301e5c;
+  --awayteam-color: #3b6146;
+}
+
+/* Every scoreboard has a unique container (VOLLEYBALL = containervolley / BASKETBALL = containerbasket etc.. read them with your browser inspector). You can use them for override styles */
+
+/* this change the logo background color */
+.containervolley .sgrlogo:before {
+  background: #000000 !important;
+}
+
+/*this change background colors of team names and ball changing module*/
+.containervolley .boxhometeam,
+.containervolley .boxawayteam,
+.containervolley .boxservice {
+  background: #cf00cc;
+}
+
+.sgrlogo {
+  display: none;
+}
+
+/*this apply font, change size only on teams names and set caracter dimension (use "em" value to keep responsive layout) */
+.containervolley .boxhometeam,
+.containervolley .boxawayteam {
+  font-family: "Roboto Condensed";
+  font-size: 0.8em;
+  color: white;
+  /* these are useful for next step */
+  /*position:relative;
+  padding: 0 2vw 0 5vw;*/
+}
+
+/*with this two pseudo element (:after) we can insert rectangular elements near names */
+/*
+.containervolley .boxhometeam:after, .containervolley .boxawayteam:after {
+  content:""; 
+  display: block; 
+  position:absolute; 
+  top:0; left:0; bottom:0; 
+  width: 3vw;
+}*/
+
+/* and now we can give it a color */
+.containervolley .boxhometeam:after {
+  background: #ffc300;
+}
+.containervolley .boxawayteam:after {
+  background: #1c73e8;
+}
+
+/*this insert an image on ball-chamnge signal*/
+.containervolley .okservice {
+  /*background: url(https://www.flexyscore.net/folder/volleyball.svg);*/
+}
+
+/*this change the background color and font color of POINTS column*/
+.labelpoints,
+.boxhomepoints,
+.boxawaypoints {
+  /*background: #CF00CC;*/
+  color: white;
+}
+
+/*this change the background color and font color of SET column*/
+.labelsets,
+.boxhomesets,
+.boxawaysets {
+  /*background: #EF93FF;*/
+  color: #cf00cc;
+  font-weight: bold;
+}
+
+/*if you don't want the labels of Set and points, you can hide them*/
+.labelpoints {
+  display: none;
+}
+.labelsets {
+  /*display:none;*/
+}
+
+/* ELEMENT POSITIONING */
+/* The positioning of the elements is dictated by a grid. You can find a great guide here: https://css-tricks.com/snippets/css/complete-guide-grid/ */
+.containervolley {
+  /*grid-template: auto / 18vw auto 7vw 10vw 15vw;*/
+  /*display: grid;*/
+  /*grid-template-columns: 0vw 0vw 0vw 50vw 18vw 15vw 50vw 18vw 15vw 0vw 0vw;*/
+  /*grid-template-rows: auto;*/
+}
+
+.container {
+  width: 100%;
+  float: left;
+  grid-template-columns: 0vw 0vw 0vw 35vw 10vw 5vw 5vw 10vw 35vw 0vw 0vw;
+  font-size: 7vw;
+  vertical-align: text-top;
+}
+
+.sgrlogo {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+.labelpoints {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+}
+.labelsets {
+  grid-row: 1 / 2;
+  grid-column: 3 / 4;
+}
+
+.boxhometeam {
+  grid-row: 1 / 2;
+  grid-column: 4 / 5;
+}
+.boxhomepoints {
+  grid-row: 1 / 2;
+  grid-column: 5 / 6;
+}
+.boxhomesets {
+  grid-row: 1 / 2;
+  grid-column: 6 / 7;
+}
+
+.boxawaysets {
+  grid-row: 1 / 2;
+  grid-column: 7 / 8;
+}
+.boxawaypoints {
+  grid-row: 1 / 2;
+  grid-column: 8 / 9;
+}
+.boxawayteam {
+  grid-row: 1 / 2;
+  grid-column: 9 / 10;
+}
+
+.boxhomeservice {
+  grid-row: 1 / 2;
+  grid-column: 10 / 11;
+}
+.boxawayservice {
+  grid-row: 1 / 2;
+  grid-column: 11 / 12;
+}
+
+/*this change the position of change-ball module */
+.containervolley .boxservice {
+  /*display:none;*/
+}
+
+.containervolley .boxhometeam {
+  background-color: var(--hometeam-color);
+}
+
+.containervolley .boxawayteam {
+  background-color: var(--awayteam-color);
+}
+
+.boxhometeam
+  .boxhomepoints
+  .boxhomesets
+  .boxawayteam
+  .boxawaypoints
+  .boxawaysets {
+  /*grid-row-start: 2;
+  grid-row-end: 3;*/
+}
+/*.containervolley .boxservice {
+  grid-column: 3/4;
+}
+
+.containervolley .boxhometeam, .containervolley .boxawayteam {
+  grid-column: 2/3;
+}*/
+
+/*this swap the position of Points and Set*/
+/*
+.labelpoints, .boxhomepoints, .boxawaypoints {
+  grid-column: 5/6;
+}
+
+.labelsets, .boxhomesets, .boxawaysets {
+  grid-column: 4/5;
+}
+*/
+
+/*this insert some round corners*/
+/*
+.boxhomepoints {
+  border-top-right-radius: 3vw;
+}
+.boxawaypoints {
+  border-bottom-right-radius: 3vw;
+}
+
+.containervolley .sgrlogo:before {
+  border-bottom-left-radius: 5vw;
+  border-top-left-radius: 5vw;
+}*/
+
+/*-------------------------------------------------------------------
+---- UNDER: background color and a little spase from margins. PLEASE DO NOT CONSIDER THIS-*/
+body {
+  background: #333;
+}
+/*.containervolley {margin: 10px 10px;}*/
