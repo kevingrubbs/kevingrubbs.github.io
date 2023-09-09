@@ -1,15 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
 
 :root {
+  /* https://redketchup.io/color-picker */
+  /* HOME */
   --color-hometeam: #301e5c;
+  --color-home-score: #241745;
+  --font-size-home: 0.55em;
+  
+  /* AWAY */
   --color-awayteam: #3b6146;
+  --color-away-score: #2C4935;
+  --font-size-away: 0.55em;
+  
+  /* 
+  ---------------------------------------------------------------------------------
+    --- STUFF BELOW HERE SHOULDN'T NEED TO CHANGE UNLESS MODIFYING THE DESIGN --- 
+  ---------------------------------------------------------------------------------
+  */
+  --border: 0.5px solid lightgray;
+  --font-size-base: 5vw;
+  --font-size-score: 0.8em;
+  --font-size-set-label: 0.3em;
+  --font-size-set-score: 0.5em;
   --color-serving-team: yellow;
-  --color-score-box-home: #888888;
-  --color-score-box-away: #888888;
   --color-set-score: #bbbbbb;
-
-  --font-size-home: 0.6em;
-  --font-size-away: 0.6em;
+  --color-set-score-bg: black;
+  --size-serving-team-bar: 2px;
 }
 
 .sgrlogo {
@@ -32,28 +48,30 @@
 }
 
 .container {
-  width: 95%;
   display: grid;
   font-family: "Roboto Condensed", sans-serif;
   align-items: center;
+  border: var(--border, none);
 }
 
 .boxhomepoints,
 .boxawaypoints {
   color: white;
   font-weight: 900;
+  font-size: var(--font-size-score);
 }
 
 .labelsets,
 .boxhomesets,
 .boxawaysets {
-  background: black;
+  background: var(--color-set-score-bg);
   color: var(--color-set-score);
-  font-size: 0.4em;
+  font-size: var(--font-size-set-label);
 }
 .boxhomesets,
 .boxawaysets {
-  font-size: 0.5em;
+  font-size: var(--font-size-set-score);
+  font-size: var(--font-size-set-score);
 }
 
 /*
@@ -72,7 +90,7 @@
   display: grid;
   grid-template-columns: 0vw 0vw 35vw 10vw 5vw 0vw 5vw 10vw 35vw;
   grid-template-rows: 10px auto auto;
-  font-size: 7vw;
+  font-size: var(--font-size-base, 6vw);
 }
 
 .sgrlogo {
@@ -102,22 +120,20 @@
 .boxhomepoints {
   grid-row: 1 / 4;
   grid-column: 4 / 5;
-  background: var(--color-score-box-home);
+  background: var(--color-home-score);
 }
 .boxhomesets {
   grid-row: 3 / 4;
   grid-column: 5 / 6;
-  /*justify-content: right;*/
 }
 .boxawaysets {
   grid-row: 3 / 4;
   grid-column: 7 / 8;
-  /*  justify-content: left;*/
 }
 .boxawaypoints {
   grid-row: 1 / 4;
   grid-column: 8 / 9;
-  background: var(--color-score-box-away);
+  background: var(--color-away-score);
 }
 .boxawayteam {
   grid-row: 1 / 4;
@@ -140,7 +156,7 @@
 
 .okservice {
   background: var(--color-serving-team);
-  height: 4px;
+  height: var(--size-serving-team-bar);
   width: 10vw;
   display: flex;
 }
@@ -151,7 +167,3 @@
 body {
   margin: 0px;
 }
-
-/*
-.containervolley {margin: 40px 0px;}
-*/
