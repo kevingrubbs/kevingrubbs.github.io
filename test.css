@@ -1,10 +1,4 @@
-/* INSTRUCTION and example for customize VOLLEYBALL and TABLETENNIS scoreboard:
-Each element has one or more classes, so you can control one or more elements at the same time.
-On the left you can read every single element with his class */
-
-/*--- First step - FONTS: CSS involves embedding fonts at the beginning of the document. You can import and use webfont, for example here we imported a Google font (https://fonts.google.com/) ---*/
-/*@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
 
 :root {
   --color-hometeam: #301e5c;
@@ -13,59 +7,54 @@ On the left you can read every single element with his class */
   --color-score-box-home: #888888;
   --color-score-box-away: #888888;
   --color-set-score: #bbbbbb;
-  
+
   --font-size-home: 0.6em;
   --font-size-away: 0.6em;
 }
 
-/* Every scoreboard has a unique container (VOLLEYBALL = containervolley / BASKETBALL = containerbasket etc.. read them with your browser inspector). You can use them for override styles */
-
-/* this change the logo background color */
-/*
-.containervolley .sgrlogo:before {
-  background: #000000 !important;
-}*/
-
-/*this change background colors of team names and ball changing module*/
-/*
-.containervolley .boxhometeam,
-.containervolley .boxawayteam,
-.containervolley .boxservice {
-  background: #cf00cc;
-}*/
-
 .sgrlogo {
   display: none;
 }
-.box{height: 100%; align-items:center; display: flex; justify-content: center;color:white;text-transform: uppercase;}
-.label{height: 100%; align-items:center; display: flex; justify-content: center;text-transform: uppercase;}
+.box {
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-transform: uppercase;
+}
+.label {
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+}
 
-.container {width: 95%; display: grid; font-family: 'Roboto Condensed', sans-serif; align-items:center; border: 3px solid black;}
+.container {
+  width: 95%;
+  display: grid;
+  font-family: "Roboto Condensed", sans-serif;
+  align-items: center;
+}
 
-
-/*this change the background color and font color of POINTS column*/
-/* .labelpoints, */
 .boxhomepoints,
 .boxawaypoints {
   color: white;
   font-weight: 900;
 }
 
-
-/*this change the background color and font color of SET column*/
 .labelsets,
 .boxhomesets,
 .boxawaysets {
   background: black;
   color: var(--color-set-score);
-  font-weight: bold;
   font-size: 0.4em;
 }
 .boxhomesets,
 .boxawaysets {
   font-size: 0.5em;
 }
-
 
 /*
 .boxhomesets:after {
@@ -75,8 +64,6 @@ On the left you can read every single element with his class */
   grid-row: 3 / 4;
   grid-column: 6 / 7;
 }*/
-
-/*if you don't want the labels of Set and points, you can hide them*/
 
 
 .container {
@@ -102,7 +89,7 @@ On the left you can read every single element with his class */
   grid-column: 5 / 8;
 }
 .labelsets:after {
-  content:"S"
+  content: "S";
 }
 
 .boxhometeam {
@@ -125,7 +112,7 @@ On the left you can read every single element with his class */
 .boxawaysets {
   grid-row: 3 / 4;
   grid-column: 7 / 8;
-/*  justify-content: left;*/
+  /*  justify-content: left;*/
 }
 .boxawaypoints {
   grid-row: 1 / 4;
@@ -154,10 +141,9 @@ On the left you can read every single element with his class */
 .okservice {
   background: var(--color-serving-team);
   height: 4px;
-  width:10vw;
+  width: 10vw;
   display: flex;
 }
-
 
 /*-------------------------------------------------------------------
 ---- UNDER: background color and a little spase from margins. PLEASE DO NOT CONSIDER THIS-*/
