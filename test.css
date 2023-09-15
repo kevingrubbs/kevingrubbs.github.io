@@ -3,14 +3,14 @@
 :root {
   /* https://redketchup.io/color-picker */
   /* HOME */
-  --color-hometeam: #301e5c;
-  --color-home-score: #241745;
-  --font-size-home: 0.55em;
+  --color-hometeam: #EB1C23;
+  --color-home-score: #B21015;
+  --font-size-home: 0.65em;
   
   /* AWAY */
-  --color-awayteam: #FFC30A;
-  --color-away-score: #D6A200;
-  --font-size-away: 0.55em;
+  --color-awayteam: #301e5c;
+  --color-away-score: #20123B;
+  --font-size-away: 0.65em;
   
   /* 
   ---------------------------------------------------------------------------------
@@ -19,7 +19,7 @@
   */
   --border: 0.5px solid lightgray;
   --font-size-base: 5vw;
-  --font-size-score: 0.8em;
+  --font-size-score: 0.85em;
   --font-size-set-label: 0.3em;
   --font-size-set-score: 0.5em;
   --color-serving-team: yellow;
