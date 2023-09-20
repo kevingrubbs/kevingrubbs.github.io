@@ -2,14 +2,14 @@
 
 :root {
   /* https://redketchup.io/color-picker */
-  /* HOME */
-  --color-hometeam: #D1202F;
-  --color-home-score: #8E1620;
-  --font-size-home: 0.65em;
   
-  /* AWAY */
-  --color-awayteam: #301e5c;
-  --color-away-score: #20123B;
+  /* COLORS */
+  --color-hometeam: #311B5A;
+  --color-home-score: #20123B;
+  --color-awayteam: #481818;
+  --color-away-score: #321111;
+
+  --font-size-home: 0.65em;
   --font-size-away: 0.65em;
   
   /* 
