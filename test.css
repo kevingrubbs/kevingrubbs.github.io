@@ -88,7 +88,7 @@
   width: 100%;
   float: left;
   display: grid;
-  grid-template-columns: 0vw 0vw 35vw 10vw 5vw 0vw 5vw 10vw 35vw;
+  grid-template-columns: 0vw 0vw 34vw 10vw 5vw 0vw 5vw 10vw 34vw;
   grid-template-rows: 10px auto auto;
   font-size: var(--font-size-base, 6vw);
 }
@@ -165,5 +165,5 @@
 ---- UNDER: background color and a little spase from margins. PLEASE DO NOT CONSIDER THIS-*/
 
 body {
-  margin: 0px;
+  margin: 1vw;
 }
